@@ -8,7 +8,12 @@ interface IInitialState {
 }
 
 const initialState: IInitialState = {
-	todos: [{ name: "a", desc: "b", isTodoFinished: false, id: "1" }],
+	todos: [
+		{ name: "Test assignment", desc: "Finish test task.", isTodoFinished: false, id: "1" },
+		{ name: "LinkedIn", desc: "Make 2 post in LinkedIn per week.", isTodoFinished: false, id: "2" },
+		{ name: "a", desc: "b", isTodoFinished: false, id: "3" },
+		{ name: "a", desc: "b", isTodoFinished: false, id: "4" },
+	],
 };
 
 const TodoSlice = createSlice({

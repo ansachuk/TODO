@@ -1,6 +1,5 @@
 <svg
 	aria-hidden="true"
-	version="1.1"
 	xmlns="http://www.w3.org/2000/svg"
 >
 	<symbol id="pencil" viewBox="0 0 32 32">
@@ -16,7 +15,7 @@
 	<symbol id="checkmark" viewBox="0 0 32 32">
 		<path d="M27 4 12 19l-7-7-5 5 12 12L32 9z"></path>
 	</symbol>
-	<symbol id="checkmark2" viewBox="0 0 32 32">
+	<symbol id="done" viewBox="0 0 32 32">
 		<path
 			d="M12.42 28.678-.013 16.44l6.168-6.071 6.265 6.167L25.846 3.322l6.168 6.071L12.42 28.678zM3.372 16.441l9.048 8.905L28.628 9.393l-2.782-2.739L12.42 19.868l-6.265-6.167-2.782 2.739z"
 		></path>
