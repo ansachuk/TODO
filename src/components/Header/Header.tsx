@@ -9,8 +9,8 @@ export default function Header() {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	return (
-		<>
-			<Navbar fixed="top" bg="dark" data-bs-theme="dark">
+		<header>
+			<Navbar bg="dark" data-bs-theme="dark">
 				<Container>
 					<Navbar.Brand>TODO!</Navbar.Brand>
 					<Button onClick={() => setIsModalOpen(true)} size="lg" variant="outline-success">
@@ -19,6 +19,6 @@ export default function Header() {
 					<AddModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
 				</Container>
 			</Navbar>
-		</>
+		</header>
 	);
 }
