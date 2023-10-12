@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteTodo, toggleTodoStatus } from "../../redux/TodoSlice";
 
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+
+import UpdateModal from "../UpdateModal/UpdateModal";
 
 import { ITodo } from "../../@types/types";
 import icons from "../../icons/sprite.svg";
@@ -20,6 +23,7 @@ type statusConfig = {
 };
 
 export default function Todo({ todo: { name, desc, isTodoFinished, id } }: Props) {
+	const [isModalOpen, setIsModalOpen] = useState(false);
 	const disp = useDispatch();
 
 	const status: statusConfig = {
@@ -46,12 +50,7 @@ export default function Todo({ todo: { name, desc, isTodoFinished, id } }: Props
 							</svg>
 						</Button>
 
-						<Button
-							onClick={() => {
-								// disp(updateTodo({}));
-							}}
-							variant="warning"
-						>
+						<Button onClick={() => setIsModalOpen(true)} variant="warning">
 							<svg width="20" height="20">
 								<use href={icons + "#pencil"}></use>
 							</svg>
@@ -68,6 +67,7 @@ export default function Todo({ todo: { name, desc, isTodoFinished, id } }: Props
 							</svg>
 						</Button>
 					</div>
+					<UpdateModal isTodoFinished={isTodoFinished} id={id} name={name} desc={desc} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
 				</Card.Body>
 			</Card>
 		</Col>

@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { nanoid } from "nanoid";
 
 import { ITodo } from "../@types/types";
 
@@ -11,8 +10,6 @@ const initialState: IInitialState = {
 	todos: [
 		{ name: "Test assignment", desc: "Finish test task.", isTodoFinished: false, id: "1" },
 		{ name: "LinkedIn", desc: "Make 2 post in LinkedIn per week.", isTodoFinished: false, id: "2" },
-		{ name: "a", desc: "b", isTodoFinished: false, id: "3" },
-		{ name: "a", desc: "b", isTodoFinished: false, id: "4" },
 	],
 };
 
@@ -24,13 +21,13 @@ const TodoSlice = createSlice({
 			reducer(state, action: PayloadAction<ITodo>) {
 				state.todos.push(action.payload);
 			},
-			prepare({ name, desc }: Pick<ITodo, "name" | "desc">): Pick<PayloadAction<ITodo>, "payload"> {
+			prepare({ name, desc, isTodoFinished, id }: ITodo): Pick<PayloadAction<ITodo>, "payload"> {
 				return {
 					payload: {
 						name,
 						desc,
-						isTodoFinished: false,
-						id: nanoid(),
+						isTodoFinished,
+						id,
 					},
 				};
 			},
