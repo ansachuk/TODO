@@ -5,6 +5,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import AddModal from "../AddModal/AddModal";
 
+import icons from "../../icons/sprite.svg";
+
 export default function Header() {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -12,7 +14,11 @@ export default function Header() {
 		<header>
 			<Navbar bg="dark" data-bs-theme="dark">
 				<Container>
-					<Navbar.Brand>TODO!</Navbar.Brand>
+					<Navbar.Brand>
+						<svg width="40" height="40">
+							<use href={icons + "#checkbox"}></use>
+						</svg>
+					</Navbar.Brand>
 					<Button onClick={() => setIsModalOpen(true)} size="lg" variant="outline-success">
 						Add
 					</Button>

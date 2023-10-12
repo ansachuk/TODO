@@ -53,20 +53,19 @@ export default function ModalForm({ name = "", desc = "", id = "", setIsModalOpe
 					isTodoFinished: isTodoFinished || false,
 				}),
 			);
+			setIsModalOpen(false);
 		}
-
-		setIsModalOpen(false);
 	};
 
 	return (
 		<form className={css.form} onSubmit={handleOnSubmit}>
 			<label htmlFor="todoName">
 				Name
-				<input onChange={onInputChange} value={todoName} id="todoName" name="todoName" type="text" />
+				<input required onChange={onInputChange} value={todoName} id="todoName" name="todoName" type="text" />
 			</label>
 			<label htmlFor="todoDesc">
 				Description
-				<textarea rows={8} onChange={onInputChange} id="todoDesc" value={todoDesc} name="todoDesc" />
+				<textarea required rows={8} onChange={onInputChange} id="todoDesc" value={todoDesc} name="todoDesc" />
 			</label>
 			<div className={css.wrapper}>
 				<Button variant="secondary" onClick={() => setIsModalOpen(false)}>
